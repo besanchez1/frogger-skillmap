@@ -14,4 +14,4 @@
 * description: Let's make a frog sprite and code a basic controller!
 * tags: easy
 
-* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/frogger/activity1
+* url: https://github.com/besanchez1/frogger-skillmap/tutorials/frogger/activity1
