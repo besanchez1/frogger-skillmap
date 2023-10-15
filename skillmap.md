@@ -5,7 +5,7 @@
 
 
 ## space
-* name: Design a Space Explorer
+* name: frog
 * description: Let's explore the depths of space! We'll design a vessel for space travel, add some enemies, and populate the universe with planets.
 
 ### space-activity1
