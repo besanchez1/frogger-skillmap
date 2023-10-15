@@ -1,5 +1,5 @@
 {
-    "name": "pxt-skillmap-sample",
+    "name": "frogger-skillmap",
     "version": "0.0.1",
     "description": "",
     "dependencies": {
@@ -9,16 +9,7 @@
         "README.md",
         "skillmap.md",
         "_locales/fr/skillmap.md",
-        "tutorials/platformer/activity1.md",
-        "tutorials/platformer/activity2.md",
-        "tutorials/platformer/activity3.md",
-        "tutorials/platformer/activity4.md",
-        "tutorials/platformer/activity5.md",
-        "tutorials/space/activity1.md",
-        "tutorials/space/activity2.md",
-        "tutorials/space/activity3.md",
-        "tutorials/space/activity4.md",
-        "tutorials/space/activity5.md"
+        "tutorials/frogger/activity1.md"
     ],
     "testFiles": [
     ],
