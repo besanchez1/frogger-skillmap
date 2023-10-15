@@ -1,6 +1,6 @@
 ## Frogger
 
-## Introduction @fullscreen
+## Introduction @unplugged
 
 In this tutorial you will create a simple Frogger game.
 Let's start with giving a sprite movement!
