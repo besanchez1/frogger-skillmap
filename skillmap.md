@@ -1,7 +1,6 @@
 # sample
 * name: Game Maker Guide
 * description: Level up your game making skills by completing the tutorials in this guide.
-* infoUrl: /docs/educator-info
 
 
 ## space
