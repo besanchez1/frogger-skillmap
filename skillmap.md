@@ -16,7 +16,7 @@
 * tags: easy
 * next: space-activity2
 
-* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/space/activity1
+* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/frogger/activity1
 
 ### space-activity2
 
