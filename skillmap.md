@@ -1,17 +1,17 @@
-# sample
-* name: Game Maker Guide
+# frogger
+* name: Frogger Game Maker Guide
 * description: Level up your game making skills by completing the tutorials in this guide.
 
 
-## space
-* name: frog
-* description: Let's explore the depths of space! We'll design a vessel for space travel, add some enemies, and populate the universe with planets.
+## frogger
+* name: frogger
+* description: Let's recreate the classic game Frogger and see what we can learn!
 
-### space-activity1
+### frogger-activity1
 
-* name: Ship Design
+* name: Sprite and Movement
 * type: tutorial
-* description: frog
+* description: Let's make a frog sprite and code a basic controller!
 * tags: easy
 
 * url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/frogger/activity1
