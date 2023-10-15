@@ -16,7 +16,7 @@
 * tags: easy
 * next: space-activity2
 
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/space/activity1
+* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/space/activity1
 
 ### space-activity2
 
@@ -26,7 +26,7 @@
 * tags: easy, projectiles, kinds
 * next: space-activity3
 
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/space/activity2
+* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/space/activity2
 
 ### space-activity3
 
@@ -36,7 +36,7 @@
 * tags: easy, enemies, kinds
 * next: space-activity4
 
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/space/activity3
+* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/space/activity3
 
 ### space-activity4
 
@@ -46,7 +46,7 @@
 * tags: intermediate, extensions
 * next: space-activity5
 
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/space/activity4
+* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/space/activity4
 
 ### space-activity5
 
@@ -55,7 +55,7 @@
 * description: Space is big and empty! Add some planets and randomized objects to fill out the environment.
 * tags: intermediate, arrays
 
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/space/activity5
+* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/space/activity5
 
 
 ## platformer
@@ -67,7 +67,7 @@
 * name: Simple Platformer
 * type: tutorial
 * description: Learn how to make a player character that can jump and move around a tilemap.
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/platformer/activity1
+* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/platformer/activity1
 * tags: easy
 * next: platformer-activity2
 
@@ -76,7 +76,7 @@
 * name: Camera and Tiles
 * type: tutorial
 * description: Learn how to use the camera and add tile overlap events to give the player a way to win and lose.
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/platformer/activity2
+* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/platformer/activity2
 * tags: easy, tiles
 * next: platformer-activity3
 
@@ -85,7 +85,7 @@
 * name: Simple Enemies
 * type: tutorial
 * description: Learn how to add enemies to your game that follow the player.
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/platformer/activity3
+* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/platformer/activity3
 * tags: intermediate, overlaps
 * next: platformer-activity4
 
@@ -94,7 +94,7 @@
 * name: Multiple Levels
 * type: tutorial
 * description: Add a second level to your platformer using functions.
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/platformer/activity4
+* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/platformer/activity4
 * tags: intermediate, functions
 * next: platformer-activity5
 
@@ -103,5 +103,5 @@
 * name: Enemy AI
 * type: tutorial
 * description: Add physics and AI to the enemies in your game.
-* url: https://github.com/microsoft/pxt-skillmap-sample/tutorials/platformer/activity5
+* url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/platformer/activity5
 * tags: intermediate, AI, physics
