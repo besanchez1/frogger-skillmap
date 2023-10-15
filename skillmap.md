@@ -11,7 +11,7 @@
 
 * name: Ship Design
 * type: tutorial
-* description: Draw and code a spaceship!
+* description: frog
 * tags: easy
 
 * url: https://github.com/besanchez1/pxt-skillmap-sample/tutorials/frogger/activity1
