@@ -1,6 +1,6 @@
 # MakeCode Skillmap Sample
 
-Test this by going to https://arcade.makecode.com/skillmap#github:https://github.com/microsoft/pxt-skillmap-sample/blob/main/skillmap.md
+Test this by going to https://arcade.makecode.com/skillmap#github:https://github.com/besanchez1/frogger-skillmap/blob/main/skillmap.md
 
 
 ## Forking
