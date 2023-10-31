@@ -22,7 +22,7 @@ Soon enough you'll have your very own Frogger clone!
 
 Let's hit the ground running and add our splash screen.
 
-Grab a ``||game:splash "___"||`` add some text to welcome your players.
+Grab a ``||game:splash "___"||`` block and add some text to welcome your players.
 
 ```blocks
 game.splash("Welcome to Frogger")
@@ -45,7 +45,8 @@ game.splash("Welcome to Frogger")
 
 ## Step 3
 
-Pull out a ``||sprites:set mySprite stay in screen||`` block. Click the slider button to make it say **ON**.
+Pull out a ``||sprites:set mySprite stay in screen||`` block and add it to the bottom. 
+Click the slider button to make it say **ON**.
 
 ```blocks
 game.splash("Welcome to Frogger")
@@ -56,7 +57,10 @@ mySprite.setStayInScreen(true)
 ## Step 4
 
 Now let's make the sprite move! Find the ``||controller:ControllerButtonEvent||`` block
-in ``||controller:Controller||``. Put one for each direction on the gamepad.
+in ``||controller:Controller||``. Pull out a total of four for each direction on the gamepad.
+
+In **MakeCode** sprites are 16x16 pixels, so we need to add 
+or subract 16 pixels for each button pressed for our movement.
 
 ```blocks
 game.splash("Welcome to Frogger")
