@@ -4,8 +4,14 @@
 
 ## Introduction @unplugged
 
-In this tutorial you will create a simple Frogger game.
-Let's start with giving a sprite movement!
+**Are you ready to begin creating your own Frogger game?**
+
+Complete this tutorial to learn how to:
+- Find blocks in the toolbox
+- Build code using those blocks in the workspace
+- Create/Add sprites to your game
+- Add movement to a sprite
+- Run your Frogger game on the built-in simulator
 
 ## Step 1
 
