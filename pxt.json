@@ -9,7 +9,9 @@
         "README.md",
         "skillmap.md",
         "_locales/fr/skillmap.md",
-        "tutorials/frogger/activity1.md"
+        "tutorials/frogger/activity1.md",
+        "tutorials/frogger/activity2.md",
+        "tutorials/frogger/activity3.md"
     ],
     "testFiles": [
     ],
