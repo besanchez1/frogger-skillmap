@@ -1,5 +1,7 @@
 ## Frogger
 
+### @explicitHints true
+
 ## Introduction @unplugged
 
 In this tutorial you will create a simple Frogger game.
