@@ -93,6 +93,7 @@ Place it right after the ``||variables:set mySprite to||``. Select the ``show ph
 and set the toggle button to **ON**
 
 ```blocks
+game.splash("Welcome to Frogger")
 let mySprite = sprites.create(assets.image`Frogger`, SpriteKind.Player)
 mySprite.setFlag(SpriteFlag.ShowPhysics, true)
 mySprite.setStayInScreen(true)
