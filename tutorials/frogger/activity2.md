@@ -36,17 +36,10 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 
 ## Introduction @unplugged
 
-**Are you ready to begin creating your own Frogger game?**
+Are you ready to present the player with some obstactes?
 
-Complete this tutorial to learn how to:
-- Find blocks in the toolbox
-- Build code using those blocks in the workspace
-- Add a simple splash screen
-- Create/Add sprites to your game
-- Add movement to a sprite
-- Run your Frogger game on the built-in simulator
-
-Soon enough you'll have your very own Frogger clone!
+In this tutorial, you'll learn to have projectiles cross the screen, 
+which players will have to avoid.
 
 ## Step 1
 
