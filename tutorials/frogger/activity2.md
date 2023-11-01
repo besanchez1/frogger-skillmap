@@ -1,5 +1,25 @@
 # Frogger Enemies
 
+```template
+game.splash("Welcome to Frogger")
+let mySprite = sprites.create(assets.image`Frogger`, SpriteKind.Player)
+mySprite.setFlag(SpriteFlag.ShowPhysics, true)
+mySprite.setStayInScreen(true)
+
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.y += -16
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.x += -16
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.x += 16
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.y += 16
+})
+```
+
 ### @explicitHints true
 
 ## Introduction @unplugged
