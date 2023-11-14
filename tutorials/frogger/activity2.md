@@ -2,7 +2,24 @@
 
 ```template
 game.splash("Welcome to Frogger")
-let mySprite = sprites.create(assets.image`Frogger`, SpriteKind.Player)
+let mySprite = sprites.create(img`
+    .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+    .  15 15 15 15 15 .  .  .  .  15 15 15 15 15 .
+    15 15 7  15 7  15 1  1  1  1  15 7  15 7  15 15
+    15 7  7  7  7  15 15 15 15 15 7  7  7  7  7  15
+    15 15 15 7  7  7  7  7  7  7  7  7  7  15 15 15
+    .  15 7  7  7  7  7  7  7  7  7  7  7  7  15 .
+    15 15 7  7  7  7  7  7  7  7  7  7  7  7  15 15
+    15 7  7  7  7  7  7  7  7  7  7  7  7  7  7  15
+    15 7  7  7  1  1  1  7  7  1  1  1  7  7  7  15
+    15 7  7  7  1  8  1  7  7  1  8  1  7  7  7  15
+    15 7  7  7  1  1  1  7  7  1  1  1  7  7  7  15
+    15 7  7  7  7  7  7  7  7  7  7  7  7  7  7  15
+    15 15 7  7  7  7  7  3  3  7  7  7  7  7  15 15
+    15 15 7  7  7  15 15 3  3  15 15 7  7  7  15 15
+    15 7  7  7  7  7  15 3  3  15 7  7  7  7  7  15
+    15 15 7  15 7  15 15 15 15 15 15 7  15 7  15 15
+`, SpriteKind.Player)
 mySprite.setFlag(SpriteFlag.ShowPhysics, true)
 mySprite.setStayInScreen(true)
 
@@ -38,3 +55,21 @@ Are you ready to present the player with some obstactes?
 
 In this tutorial, you'll learn to have projectiles cross the screen, 
 which players will have to avoid.
+
+## Step 1
+
+**Time for some enemies!**
+
+Now that we have the basic character movement complete let's add some enemies.
+
+Let's look at how we can add enemies that come from the side every so often.
+
+## Step 2
+
+Start by grabbing a ``||game:onUpdateInterval "___"||`` and leave it at 500 ms.
+
+```blocks
+game.onUpdateInterval(500, function () {})
+```
+
+## Step 3
