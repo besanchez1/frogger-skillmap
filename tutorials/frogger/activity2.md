@@ -1,7 +1,7 @@
 # Frogger Enemies
 
 ```template
-game.splash("Welcome to Frogger")
+game.splash("Welcome to A Frogger Clone")
 let mySprite = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . f f f f f . . . . f f f f f .
@@ -66,10 +66,28 @@ Let's look at how we can add enemies that come from the side every so often.
 
 ## Step 2
 
-Start by grabbing a ``||game:onUpdateInterval "___"||`` and leave it at 500 ms.
+Start by grabbing a ``||game:onUpdateInterval "___"||`` from ``||game:Game||`` and leave it at 500 ms.
+
+Next go into ``||sprites:Sprite||`` and get a ``||sprites:createProjectileFromSide||`` 
+and draw an enemy for your character to avoid. 
+
+If you don't want to draw it yourself, you can select a premade asset 
+or have an enemy sprite provided in the next skillmap step.
+
+Once finished, set **vy** to 0, othwerise the sprite will be moving diagonally. 
 
 ```blocks
-game.onUpdateInterval(500, function () {})
+game.onUpdateInterval(500, function () {
+projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)})
 ```
 
 ## Step 3
+
+```
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(50)) {
+        projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
+        projectile.setPosition(0, 40)
+    }
+})
+```
