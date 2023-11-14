@@ -108,9 +108,9 @@ Let's fix that!
 
 ## Step 5
 
-Grab an ``||sprites.onOverlap||`` block and change the second dropdown to ``|sprites.Projectile|``.
+Grab an ``||sprites:onOverlap||`` block and change the second dropdown to ``|sprites.Projectile|``.
 
-Then place a ``||game.gameOver||`` within and set it to **LOSE**.
+Then place a ``||game:gameOver||`` within and set it to **LOSE**.
 
 Simulate and see what happens!
 
@@ -128,9 +128,9 @@ But right now our player can't get through the line of enemies, so we're going t
 
 ## Step 7
 
-To space out our enemies we will use an ``||logic.if "___"||`` with a ``||Math.percentChance||``.
+To space out our enemies we will use an ``||logic:if "___"||`` with a ``||Math:percentChance||``.
 
-By dragging the ``||Math.percentChance||`` into the ``||logic.if "___"||`` we can set a chance of an enemy appearing
+By dragging the ``||Math:percentChance||`` into the ``||logic:if "___"||`` we can set a chance of an enemy appearing
 everytime our ``|Game:onUpdateInterval "___"|`` runs.
 
 ```blocks
@@ -139,10 +139,10 @@ if (Math.percentChance()) {}
 
 ## Step 7
 
-Place everything that was in ``|Game:onUpdateInterval "___"|`` in to ``|Logic.if "___"|``, then place the ``|Logic.if "___"|``
+Place everything that was in ``|Game:onUpdateInterval "___"|`` in to ``|Logic:if "___"|``, then place the ``|Logic:if "___"|``
 into ``|Game:onUpdateInterval "___"|``. 
 
-Set the ``|Math.percentChance|`` to **50%**, and let's see the result!
+Set the ``|Math:percentChance|`` to **50%**, and let's see the result!
 
 ```blocks
 game.onUpdateInterval(500, function () {
