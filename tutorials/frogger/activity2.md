@@ -88,7 +88,7 @@ projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
 If we simulate our game right now you'll notice the 
 enemy sprite is appearing at the top of the screen.
 
-To fix this, put a ``||sprites:setPosition "___"||`` below and set it to **(0,40)**.
+To fix this, put a ``||variable:setPosition mySprite to "___"||`` below and set it to **(0,40)**.
 
 Now our enemy sprite should be right above where the player starts.
 
