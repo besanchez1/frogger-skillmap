@@ -68,8 +68,8 @@ Let's look at how we can add enemies that come from the side every so often.
 
 Start by grabbing an ``||game:onUpdateInterval "___"||`` from ``||game:Game||`` and leave it at 500 ms.
 
-Next go into ``||sprites:Sprite||`` and get a ``||sprites:createProjectileFromSide||`` 
-to place in the ``||game:onUpdateInterval "___"||`` block,
+Next go into ``||sprites:Sprites||`` and get a ``||sprites(variables):createProjectileFromSide||`` 
+to place in the ``|game:onUpdateInterval "___"|`` block,
 and draw an enemy for your character to avoid. 
 
 If you don't want to draw it yourself, you can select a premade asset. 
@@ -88,7 +88,7 @@ projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
 If we simulate our game right now you'll notice the 
 enemy sprite is appearing at the top of the screen.
 
-To fix this, put a ``||variable:setPosition mySprite to "___"||`` below and set it to **(0,40)**.
+To fix this, put a ``||sprites(variable):set Position "Projectile" to "___"||`` below and set it to **(0,40)**.
 
 Now our enemy sprite should be right above where the player starts.
 
