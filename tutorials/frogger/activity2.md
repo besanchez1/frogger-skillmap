@@ -69,7 +69,7 @@ Let's look at how we can add enemies that come from the side every so often.
 Start by grabbing an ``||game:onUpdateInterval "___"||`` from ``||game:Game||`` and leave it at 500 ms.
 
 Next go into ``||sprites:Sprites||`` and get a ``||variables(sprites):createProjectileFromSide||`` 
-to place in the ``|game:onUpdateInterval "___"|`` block,
+to place in the ``[game:onUpdateInterval "___"]`` block,
 and draw an enemy for your character to avoid. 
 
 If you don't want to draw it yourself, you can select a premade asset. 
@@ -108,7 +108,7 @@ Let's fix that!
 
 ## Step 5
 
-Grab an ``||sprites:onOverlap||`` block and change the second dropdown to ``|sprites:Projectile|``.
+Grab an ``||sprites:onOverlap||`` block and change the second dropdown to ``[sprites:Projectile]``.
 
 Then place a ``||game:gameOver||`` within and set it to **LOSE**.
 
@@ -130,8 +130,8 @@ But right now our player can't get through the line of enemies, so we're going t
 
 To space out our enemies we will use an ``||logic:if "___"||`` with a ``||Math:percentChance||``.
 
-By dragging the ``|math:percentChance|`` into the ``|logic:if "___"|`` we can set a chance of an enemy appearing
-everytime our ``|game:onUpdateInterval "___"|`` runs.
+By dragging the ``[math:percentChance]`` into the ``[logic:if "___"]`` we can set a chance of an enemy appearing
+everytime our ``[game:onUpdateInterval "___"]`` runs.
 
 ```blocks
 if (Math.percentChance()) {}
@@ -139,10 +139,10 @@ if (Math.percentChance()) {}
 
 ## Step 8
 
-Place everything that was in ``|game:onUpdateInterval "___"|`` in to ``|logic:if "___"|``, then place the ``|logic:if "___"|``
-into ``|game(game):onUpdateInterval "___"|``. 
+Place everything that was in ``[game:onUpdateInterval "___"]`` in to ``[logic:if "___"]``, then place the ``[logic:if "___"]``
+into ``[game:onUpdateInterval "___"]``. 
 
-Set the ``|math:percentChance|`` to **50%**, and let's see the result!
+Set the ``[math:percentChance]`` to **50%**, and let's see the result!
 
 ```blocks
 game.onUpdateInterval(500, function () {
