@@ -140,14 +140,14 @@ if (Math.percentChance()) {}
 ## Step 8
 
 Place everything that was in ``|game:onUpdateInterval "___"|`` in to ``|logic:if "___"|``, then place the ``|logic:if "___"|``
-into ``|game:onUpdateInterval "___"|``. 
+into ``|game(game):onUpdateInterval "___"|``. 
 
 Set the ``|math:percentChance|`` to **50%**, and let's see the result!
 
 ```blocks
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
-        projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
+        let projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
         projectile.setPosition(0, 40)
     }
 })
