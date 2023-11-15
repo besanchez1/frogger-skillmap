@@ -141,7 +141,7 @@ if (Math.percentChance()) {}
 
 Place the ``||logic:if "___||`` in ``||game:onUpdateInterval "___"||`` to have it encompass everything within.
 
-Set the ``[math:percentChance]`` to **50%**, and let's see the result!
+Set the ``|math:percentChance|`` to **50%**, and let's see the result!
 
 ```blocks
 game.onUpdateInterval(500, function () {
