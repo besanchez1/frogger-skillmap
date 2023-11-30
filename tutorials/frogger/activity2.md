@@ -78,7 +78,24 @@ Once finished, set **vy** to **0**. Othwerise, the sprite will be moving diagona
 
 ```blocks
 game.onUpdateInterval(500, function () {
-projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
+let projectile = sprites.createProjectileFromSide(img`
+    . . . . . . f . . . f . . . . .
+    . . . . f f 4 f f f 4 f . f . .
+    . . f f 2 4 c f 2 4 2 f f 4 f .
+    . f 4 2 f f f f 4 f f 4 2 2 f .
+    . . f 4 2 e e e e 4 f 2 f f . .
+    . . . f e c c c c c e e f . . .
+    . . f e c 4 4 e c e b 2 e f . .
+    . . f e 4 d d 4 e e 4 4 4 f . .
+    . . f e 4 d d 4 e e 4 4 4 f . .
+    . . f e c 4 4 e c e b 2 e f . .
+    . . . f e c c c c c e e f . . .
+    . . f 4 2 e e e e 4 f 2 f f . .
+    . f 4 2 f f f f 4 f f 4 2 2 f .
+    . . f f 2 4 c f 2 4 2 f f 4 f .
+    . . . . f f 4 f f f 4 f . f . .
+    . . . . . . f . . . f . . . . .
+`, 50, 0)
 })
 ```
 
@@ -93,7 +110,24 @@ Now our enemy sprite should be right above where the player starts.
 
 ```blocks
 game.onUpdateInterval(500, function () {
-let projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
+let projectile = sprites.createProjectileFromSide(img`
+    . . . . . . f . . . f . . . . .
+    . . . . f f 4 f f f 4 f . f . .
+    . . f f 2 4 c f 2 4 2 f f 4 f .
+    . f 4 2 f f f f 4 f f 4 2 2 f .
+    . . f 4 2 e e e e 4 f 2 f f . .
+    . . . f e c c c c c e e f . . .
+    . . f e c 4 4 e c e b 2 e f . .
+    . . f e 4 d d 4 e e 4 4 4 f . .
+    . . f e 4 d d 4 e e 4 4 4 f . .
+    . . f e c 4 4 e c e b 2 e f . .
+    . . . f e c c c c c e e f . . .
+    . . f 4 2 e e e e 4 f 2 f f . .
+    . f 4 2 f f f f 4 f f 4 2 2 f .
+    . . f f 2 4 c f 2 4 2 f f 4 f .
+    . . . . f f 4 f f f 4 f . f . .
+    . . . . . . f . . . f . . . . .
+`, 50, 0)
 projectile.setPosition(0, 40)
 })
 ```
@@ -145,7 +179,24 @@ Set the ``|math:percentChance|`` to **50%**, and let's see the result!
 ```blocks
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
-        let projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
+        let projectile = sprites.createProjectileFromSide(img`
+    . . . . . . f . . . f . . . . .
+    . . . . f f 4 f f f 4 f . f . .
+    . . f f 2 4 c f 2 4 2 f f 4 f .
+    . f 4 2 f f f f 4 f f 4 2 2 f .
+    . . f 4 2 e e e e 4 f 2 f f . .
+    . . . f e c c c c c e e f . . .
+    . . f e c 4 4 e c e b 2 e f . .
+    . . f e 4 d d 4 e e 4 4 4 f . .
+    . . f e 4 d d 4 e e 4 4 4 f . .
+    . . f e c 4 4 e c e b 2 e f . .
+    . . . f e c c c c c e e f . . .
+    . . f 4 2 e e e e 4 f 2 f f . .
+    . f 4 2 f f f f 4 f f 4 2 2 f .
+    . . f f 2 4 c f 2 4 2 f f 4 f .
+    . . . . f f 4 f f f 4 f . f . .
+    . . . . . . f . . . f . . . . .
+`, 50, 0)
         projectile.setPosition(0, 40)
     }
 })
