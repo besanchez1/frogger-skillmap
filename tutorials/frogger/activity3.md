@@ -1,100 +1,25 @@
 # Frogger Background and Sprite Map
 
-### @explicitHints true
-
-## Introduction @unplugged
-
-**Are you ready to begin creating your own Frogger game?**
-
-Complete this tutorial to learn how to:
-- Find blocks in the toolbox
-- Build code using those blocks in the workspace
-- Add a simple splash screen
-- Create/Add sprites to your game
-- Add movement to a sprite
-- Run your Frogger game on the built-in simulator
-
-Soon enough you'll have your very own Frogger clone!
-
-## Step 1
-
-**Welcome!**
-
-Let's hit the ground running and add our splash screen.
-
-Grab a ``||game:splash "___"||`` block and add some text to welcome your players.
-
-```blocks
-game.splash("Welcome to Frogger")
-```
-
-## Step 2
-
-Now that we have a splash screen to greet players, let's add our Frogger!
-
- Go get a ``||variables:set mySprite to||`` block from ``||sprites:Sprites||``. 
- Add this below the ``||game:splash "___"||`` block.
- 
- Click on the grey image in the block to add the provided sprite 
- or to open the Image Editor, and draw an image for your sprite.
-
- ```blocks
-game.splash("Welcome to Frogger")
- let mySprite = sprites.create(assets.image`Frogger`, SpriteKind.Player)
- ```
-
-## Step 3
-
-Pull out a ``||sprites:set mySprite stay in screen||`` block and add it to the bottom. 
-Click the slider button to make it say **ON**.
-
-```blocks
-game.splash("Welcome to Frogger")
-let mySprite = sprites.create(assets.image`Frogger`, SpriteKind.Player)
-mySprite.setStayInScreen(true)
-```
-
-## Step 4
-
-Now let's make the sprite move! Find the ``||controller:ControllerButtonEvent||`` block
-in ``||controller:Controller||``. Pull out a total of four for each direction on the gamepad.
-
-In **MakeCode** sprites are 16x16 pixels, so we need to add 
-or subract 16 pixels for each button pressed for our movement.
-
-```blocks
-game.splash("Welcome to Frogger")
-let mySprite = sprites.create(assets.image`Frogger`, SpriteKind.Player)
-mySprite.setStayInScreen(true)
-
-controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.y += -16
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.x += -16
-})
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.x += 16
-})
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.y += 16
-})
-```
-
-## Step 5
-
-Go to the game simulator and run your program. Are you able to move the sprite 
-and does it stay in the screen? Good!
-
-## Step 6
-
-To make things more interesting, get another ``||sprites:set mySprite||`` setting block.
-Place it right after the ``||variables:set mySprite to||``. Select the ``show physics`` setting
-and set the toggle button to **ON**
-
-```blocks
-game.splash("Welcome to Frogger")
-let mySprite = sprites.create(assets.image`Frogger`, SpriteKind.Player)
+```template
+game.splash("Welcome to A Frogger Clone")
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . f f f f f . . . . f f f f f .
+    f f 7 f 7 f . . . . f 7 f 7 f f
+    f 7 7 7 7 f f f f f f 7 7 7 7 f
+    f f f 7 7 7 7 7 7 7 7 7 7 f f f
+    . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
+    f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
+    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
+    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
+    f 7 7 7 1 8 1 7 7 1 8 1 7 7 7 f
+    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
+    f f 7 7 7 7 7 3 3 7 7 7 7 7 f f
+    f f 7 7 7 f f 3 3 f f 7 7 7 f f
+    f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
+    f f 7 f 7 f f f f f f 7 f 7 f f
+`, SpriteKind.Player)
 mySprite.setFlag(SpriteFlag.ShowPhysics, true)
 mySprite.setStayInScreen(true)
 
@@ -110,8 +35,160 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.y += 16
 })
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.gameOver(false)
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.y += 16
+})
+
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(50)) {
+        let projectile = sprites.createProjectileFromSide(img`
+    . . . . . . . . . . . . . . . .
+    . f f f f f . . . . f f f f f .
+    f f 7 f 7 f . . . . f 7 f 7 f f
+    f 7 7 7 7 f f f f f f 7 7 7 7 f
+    f f f 7 7 7 7 7 7 7 7 7 7 f f f
+    . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
+    f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
+    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
+    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
+    f 7 7 7 1 8 1 7 7 1 8 1 7 7 7 f
+    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
+    f f 7 7 7 7 7 3 3 7 7 7 7 7 f f
+    f f 7 7 7 f f 3 3 f f 7 7 7 f f
+    f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
+    f f 7 f 7 f f f f f f 7 f 7 f f
+`, 50, 0)
+        projectile.setPosition(0, 40)
+    }
+})
+
+```
+
+```assetjson
+{
+  "README.md": " ",
+  "assets.json": "",
+  "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"pxt-on-start\" x=\"0\" y=\"0\"/></xml>",
+  "main.ts": "\n",
+  "pxt.json": "{\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n    \"targetVersions\": {\n        \"branch\": \"v1.3.44\",\n        \"tag\": \"v1.3.44\",\n        \"target\": \"1.3.44\",\n        \"pxt\": \"6.8.33\"\n    },\n    \"preferredEditor\": \"blocksprj\"\n}\n"
+}
+```
+
+### @explicitHints true
+
+## Introduction @unplugged
+
+Are you ready to present the player with some obstactes?
+
+In this tutorial, you'll learn to have projectiles cross the screen, 
+which players will have to avoid.
+
+## Step 1
+
+**Time for some enemies!**
+
+Now that we have the basic character movement complete let's add some enemies.
+
+Let's look at how we can add enemies that come from the side every so often.
+
+## Step 2
+
+Start by grabbing an ``||game:onUpdateInterval "___"||`` from ``||game:Game||`` and leave it at 500 ms.
+
+Next go into ``||sprites:Sprites||`` and get a ``||variables(sprites):createProjectileFromSide||`` 
+to place in the ``||game:onUpdateInterval "___"||`` block,
+and draw an enemy for your character to avoid. 
+
+If you don't want to draw it yourself, you can select a premade asset. 
+An enemy sprite will also be provided in the next skillmap step.
+
+Once finished, set **vy** to **0**. Othwerise, the sprite will be moving diagonally. 
+
+```blocks
+game.onUpdateInterval(500, function () {
+projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
+})
+```
+
+## Step 3
+
+If we simulate our game right now you'll notice the 
+enemy sprite is appearing at the top of the screen.
+
+To fix this, put a ``||sprites:setPosition to "___"||`` below and set the dropdown to **Projectile** and position to **(0,40)**.
+
+Now our enemy sprite should be right above where the player starts.
+
+```blocks
+game.onUpdateInterval(500, function () {
+let projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
+projectile.setPosition(0, 40)
+})
+```
+
+## Step 4
+
+Let's simulate again and see if anything is missing...
+
+Currently if our player comes into contact with the enemy sprite, nothing happens. 
+Let's fix that!
+
+## Step 5
+
+Grab an ``||sprites:onOverlap||`` block and change the second dropdown to ``||sprites:Projectile||``.
+
+Then place a ``||game:gameOver||`` within and set it to **LOSE**.
+
+Simulate and see what happens!
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.gameOver(false)
+})
+```
+
+## Step 6
+
+Notice, now when the player comes into contact with the enemy we get a **Game Over**.
+
+But right now our player can't get through the line of enemies, so we're going to change that.
+
+## Step 7
+
+To space out our enemies we will use an ``||logic:if "___"||`` with a ``||Math:percentChance||``.
+
+By dragging the ``||math:percentChance||`` into the ``||logic:if "___"||`` we can set a chance of an enemy appearing
+everytime our ``||game:onUpdateInterval "___"||`` runs.
+
+```blocks
+if (Math.percentChance()) {}
+```
+
+## Step 8
+
+Place the ``||logic:if "___||`` in ``||game:onUpdateInterval "___"||`` to have it encompass everything within.
+
+Set the ``|math:percentChance|`` to **50%**, and let's see the result!
+
+```blocks
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(50)) {
+        let projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
+        projectile.setPosition(0, 40)
+    }
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.gameOver(false)
+})
 ```
 
 ## Complete
 
-That's it. You've got Frogger moving around. You're awesome!
+Now our enemies work as intended and the player can get past. Fantastic work!
+
