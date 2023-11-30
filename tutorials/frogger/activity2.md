@@ -20,7 +20,6 @@ let mySprite = sprites.create(img`
     f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
     f f 7 f 7 f f f f f f 7 f 7 f f
 `, SpriteKind.Player)
-mySprite.setFlag(SpriteFlag.ShowPhysics, true)
 mySprite.setStayInScreen(true)
 
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
