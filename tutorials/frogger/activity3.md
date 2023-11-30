@@ -20,7 +20,6 @@ let mySprite = sprites.create(img`
     f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
     f f 7 f 7 f f f f f f 7 f 7 f f
 `, SpriteKind.Player)
-mySprite.setFlag(SpriteFlag.ShowPhysics, true)
 mySprite.setStayInScreen(true)
 
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -34,10 +33,6 @@ controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     mySprite.y += 16
-})
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.gameOver(false)
 })
 
 game.onUpdateInterval(500, function () {
@@ -62,6 +57,10 @@ game.onUpdateInterval(500, function () {
 `, 50, 0)
         projectile.setPosition(0, 40)
     }
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.gameOver(false)
 })
 
 ```
