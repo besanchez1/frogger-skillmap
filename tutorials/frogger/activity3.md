@@ -39,9 +39,6 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     game.gameOver(false)
 })
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.y += 16
-})
 
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
