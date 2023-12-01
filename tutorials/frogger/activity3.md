@@ -71,6 +71,91 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
   "assets.json": "",
   "main.blocks": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"pxt-on-start\" x=\"0\" y=\"0\"/></xml>",
   "main.ts": "\n",
+  "tilemap.g.ts": // Auto-generated code. Do not edit.
+\nnamespace myTiles {
+    //% fixedInstance jres blockIdentity=images._tile
+    \nexport const transparency16 = image.ofBuffer(hex``);
+    //% fixedInstance jres blockIdentity=images._tile
+    \nexport const tile1 = image.ofBuffer(hex``);
+\n
+    \nhelpers._registerFactory(\"tilemap\", function(name: string) {
+        \nswitch(helpers.stringTrim(name)) {
+            \ncase \"Frogger_Strip\":
+            \ncase \"Frogger_Lake1\":return tiles.createTilemap(hex`0e001800030301020201010102030303030303030302030202020202030202010103030303030202020202020201010101010102020101010101010107070707070707070707070707070707070707070707070707070707070707070707070707070707070706060606060606060606060606060505050505050505050505050505010303030303030103010103030104040404040404040404040404040606060606060606060606060606050505050505050505050505050504040404040404040404040404040404040404040404040404040404010101030303030302020202010202020202020303030201010102020202020202010303030303030201010101010202020101010201010103030102030101020201010202010101030101030202020102020201010201030302030301010202020101020203030203030301010102020201020303030103030103020202`, img`
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n..............
+\n`, [myTiles.transparency16,sprites.castle.tileGrass2,sprites.castle.tileGrass1,sprites.castle.tileGrass3,sprites.vehicle.roadHorizontal,sprites.castle.tilePath2,sprites.castle.tilePath8,sprites.dungeon.hazardWater], TileScale.Sixteen);
+     \n   }
+       \n return null;
+   \n })
+\n
+  \n  helpers._registerFactory(\"tile\", function(name: string) {
+        \nswitch(helpers.stringTrim(name)) {
+          \n  case \"transparency16\":return transparency16;
+           \n case "Log":
+           \n case "tile1":return tile1;
+        \n}
+       \n return null;
+    \n})
+
+\n}
+\n// Auto-generated code. Do not edit.,
+"tilemap.g.jres": {
+    \n\"transparency16\": {
+        \n\"data\": \"hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",
+        \n\"mimeType\": \"image/x-mkcd-f4\",
+        \n\"tilemapTile\": true
+    \n},
+    \n\"tile1\": {
+        \n\"data\": \"hwQQABAAAAAAAPD//////wAA8N7d3d3+AADw7u7u7v4AAPDu7u7u/gAA8O7u7u7+AADw7u7u7v4AAPDu7u7u/gAA8O7u7u7+AADw7u7u7v4AAPDu7u7u/gAA8O7u7u7+AADw7u7u7v4AAPDu7u7u/gAA8O7u7u7+AADw3t3d3f4AAPD//////w==\",
+        \n\"mimeType\": \"image/x-mkcd-f4\",
+        \n\"tilemapTile\": true,
+        \n\"displayName\": \"Log\"
+    },
+    \n\"Frogger_Lake1\": {
+        \n\"id\": \"Frogger_Lake1\",
+        \n\"mimeType\": \"application/mkcd-tilemap\",
+        \n\"data\": \"MTAwZTAwMTgwMDAzMDMwMTAyMDIwMTAxMDEwMjAzMDMwMzAzMDMwMzAzMDMwMjAzMDIwMjAyMDIwMjAzMDIwMjAxMDEwMzAzMDMwMzAzMDIwMjAyMDIwMjAyMDIwMTAxMDEwMTAxMDEwMjAyMDEwMTAxMDEwMTAxMDEwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNzA3MDcwNjA2MDYwNjA2MDYwNjA2MDYwNjA2MDYwNjA2MDUwNTA1MDUwNTA1MDUwNTA1MDUwNTA1MDUwNTAxMDMwMzAzMDMwMzAzMDEwMzAxMDEwMzAzMDEwNDA0MDQwNDA0MDQwNDA0MDQwNDA0MDQwNDA0MDYwNjA2MDYwNjA2MDYwNjA2MDYwNjA2MDYwNjA1MDUwNTA1MDUwNTA1MDUwNTA1MDUwNTA1MDUwNDA0MDQwNDA0MDQwNDA0MDQwNDA0MDQwNDA0MDQwNDA0MDQwNDA0MDQwNDA0MDQwNDA0MDQwNDAxMDEwMTAzMDMwMzAzMDMwMjAyMDIwMjAxMDIwMjAyMDIwMjAyMDMwMzAzMDIwMTAxMDEwMjAyMDIwMjAyMDIwMjAxMDMwMzAzMDMwMzAzMDIwMTAxMDEwMTAxMDIwMjAyMDEwMTAxMDIwMTAxMDEwMzAzMDEwMjAzMDEwMTAyMDIwMTAxMDIwMjAxMDEwMTAzMDEwMTAzMDIwMjAyMDEwMjAyMDIwMTAxMDIwMTAzMDMwMjAzMDMwMTAxMDIwMjAyMDEwMTAyMDIwMzAzMDIwMzAzMDMwMTAxMDEwMjAyMDIwMTAyMDMwMzAzMDEwMzAzMDEwMzAyMDIwMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMA==\",
+        \n\"tileset\": [
+            \n\"myTiles.transparency16\",
+            \n\"sprites.castle.tileGrass2\",
+            \n\"sprites.castle.tileGrass1\",
+            \n\"sprites.castle.tileGrass3\",
+            \n\"sprites.vehicle.roadHorizontal\",
+            \n\"sprites.castle.tilePath2\",
+            \n\"sprites.castle.tilePath8\",
+            \n\"sprites.dungeon.hazardWater\"
+        \n],
+        \n\"displayName\": \"Frogger_Strip\"
+    \n},
+    \n\"*\": {
+        \n\"mimeType\": \"image/x-mkcd-f4\",
+        \n\"dataEncoding\": \"base64\",
+        \n\"namespace\": \"myTiles\"
+    \n}
+\n},
   "pxt.json": "{\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\"\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n    \"targetVersions\": {\n        \"branch\": \"v1.3.44\",\n        \"tag\": \"v1.3.44\",\n        \"target\": \"1.3.44\",\n        \"pxt\": \"6.8.33\"\n    },\n    \"preferredEditor\": \"blocksprj\"\n}\n"
 }
 ```
