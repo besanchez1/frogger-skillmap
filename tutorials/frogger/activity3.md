@@ -2,24 +2,7 @@
 
 ```template
 game.splash("Welcome to A Frogger Clone")
-let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . f f f f f . . . . f f f f f .
-    f f 7 f 7 f . . . . f 7 f 7 f f
-    f 7 7 7 7 f f f f f f 7 7 7 7 f
-    f f f 7 7 7 7 7 7 7 7 7 7 f f f
-    . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
-    f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 1 8 1 7 7 1 8 1 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f f 7 7 7 7 7 3 3 7 7 7 7 7 f f
-    f f 7 7 7 f f 3 3 f f 7 7 7 f f
-    f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
-    f f 7 f 7 f f f f f f 7 f 7 f f
-`, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -37,24 +20,7 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
-        let projectile = sprites.createProjectileFromSide(img`
-    . . . . . . f . . . f . . . . .
-    . . . . f f 4 f f f 4 f . f . .
-    . . f f 2 4 c f 2 4 2 f f 4 f .
-    . f 4 2 f f f f 4 f f 4 2 2 f .
-    . . f 4 2 e e e e 4 f 2 f f . .
-    . . . f e c c c c c e e f . . .
-    . . f e c 4 4 e c e b 2 e f . .
-    . . f e 4 d d 4 e e 4 4 4 f . .
-    . . f e 4 d d 4 e e 4 4 4 f . .
-    . . f e c 4 4 e c e b 2 e f . .
-    . . . f e c c c c c e e f . . .
-    . . f 4 2 e e e e 4 f 2 f f . .
-    . f 4 2 f f f f 4 f f 4 2 2 f .
-    . . f f 2 4 c f 2 4 2 f f 4 f .
-    . . . . f f 4 f f f 4 f . f . .
-    . . . . . . f . . . f . . . . .
-`, 50, 0)
+        let projectile = sprites.createProjectileFromSide(assets.image`Spider_Right`, 50, 0)
         projectile.setPosition(0, 40)
     }
 })
@@ -102,24 +68,7 @@ Set your prefered background color and test it to ensure you have your desired c
 
 ```blocks
 game.splash("Welcome to Frogger")
-let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . f f f f f . . . . f f f f f .
-    f f 7 f 7 f . . . . f 7 f 7 f f
-    f 7 7 7 7 f f f f f f 7 7 7 7 f
-    f f f 7 7 7 7 7 7 7 7 7 7 f f f
-    . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
-    f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 1 8 1 7 7 1 8 1 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f f 7 7 7 7 7 3 3 7 7 7 7 7 f f
-    f f 7 7 7 f f 3 3 f f 7 7 7 f f
-    f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
-    f f 7 f 7 f f f f f f 7 f 7 f f
-`, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 scene.setBackgroundColor(13)
 ```
@@ -141,24 +90,7 @@ Have fun with this and be sure to use at least **three** different tiles to cons
 
 ```blocks
 game.splash("Welcome to Frogger")
-let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . f f f f f . . . . f f f f f .
-    f f 7 f 7 f . . . . f 7 f 7 f f
-    f 7 7 7 7 f f f f f f 7 7 7 7 f
-    f f f 7 7 7 7 7 7 7 7 7 7 f f f
-    . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
-    f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 1 8 1 7 7 1 8 1 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f f 7 7 7 7 7 3 3 7 7 7 7 7 f f
-    f f 7 7 7 f f 3 3 f f 7 7 7 f f
-    f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
-    f f 7 f 7 f f f f f f 7 f 7 f f
-`, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 scene.setBackgroundColor(13)
 tiles.setCurrentTilemap(tilemap`Frogger_Lake1`)
