@@ -1,4 +1,4 @@
-# Frogger Background and Sprite Map
+# Frogger Background and Tile Map
 
 ```template
 game.splash("Welcome to A Frogger Clone")
@@ -79,52 +79,85 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## Introduction @unplugged
 
-Are you ready to present the player with some obstactes?
+Now that we've got our player and an enemy, let's add an environment.
 
-In this tutorial, you'll learn to have projectiles cross the screen, 
-which players will have to avoid.
+In this tutorial, we'll add a background and a tilemap to the game.
 
 ## Step 1
 
-**Time for some enemies!**
+**Background**
 
-Now that we have the basic character movement complete let's add some enemies.
-
-Let's look at how we can add enemies that come from the side every so often.
+First, we'll add a simple background to add contrast for our player and enemy sprites.
 
 ## Step 2
 
-Start by grabbing an ``||game:onUpdateInterval "___"||`` from ``||game:Game||`` and leave it at 500 ms.
 
-Next go into ``||sprites:Sprites||`` and get a ``||variables(sprites):createProjectileFromSide||`` 
-to place in the ``||game:onUpdateInterval "___"||`` block,
-and draw an enemy for your character to avoid. 
+Get a ``||scene:setBackgroundColor "___"||`` block and place it within **on start** block.
 
-If you don't want to draw it yourself, you can select a premade asset. 
-An enemy sprite will also be provided in the next skillmap step.
-
-Once finished, set **vy** to **0**. Othwerise, the sprite will be moving diagonally. 
+Set your prefered background color and test it to ensure you have your desired contrast.
 
 ```blocks
-game.onUpdateInterval(500, function () {
-projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
-})
+game.splash("Welcome to Frogger")
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . f f f f f . . . . f f f f f .
+    f f 7 f 7 f . . . . f 7 f 7 f f
+    f 7 7 7 7 f f f f f f 7 7 7 7 f
+    f f f 7 7 7 7 7 7 7 7 7 7 f f f
+    . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
+    f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
+    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
+    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
+    f 7 7 7 1 8 1 7 7 1 8 1 7 7 7 f
+    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
+    f f 7 7 7 7 7 3 3 7 7 7 7 7 f f
+    f f 7 7 7 f f 3 3 f f 7 7 7 f f
+    f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
+    f f 7 f 7 f f f f f f 7 f 7 f f
+`, SpriteKind.Player)
+mySprite.setStayInScreen(true)
+scene.setBackgroundColor(13)
 ```
-
 ## Step 3
 
-If we simulate our game right now you'll notice the 
-enemy sprite is appearing at the top of the screen.
+A **background** is the foundation for creating our environment and is useful to fill in transparent tiles of a **tilemap**.
 
-To fix this, put a ``||sprites:setPosition to "___"||`` below and set the dropdown to **Projectile** and position to **(0,40)**.
+Let's now create a tilemap to go over our background and to serve as the game space.
 
-Now our enemy sprite should be right above where the player starts.
+## Step 4
+
+To add a tilemap go into ``||scene:Scene||`` and grab ``||scene:setCurrentTilemap "___"||`` 
+to place below our ``||scene:setBackgroundColor "___"||`` block.
+
+Click the blank box to begin drawing your tilemap. In the **bottom left** I recommend setting 
+the dimensions to **14** by **32**, but as long as it's longer than it is wide that's okay.
+
+Have fun with this and be sure to use at least **three** different tiles to construct your map. This will be important later.
 
 ```blocks
-game.onUpdateInterval(500, function () {
-let projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
-projectile.setPosition(0, 40)
-})
+game.splash("Welcome to Frogger")
+let mySprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . f f f f f . . . . f f f f f .
+    f f 7 f 7 f . . . . f 7 f 7 f f
+    f 7 7 7 7 f f f f f f 7 7 7 7 f
+    f f f 7 7 7 7 7 7 7 7 7 7 f f f
+    . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
+    f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
+    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
+    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
+    f 7 7 7 1 8 1 7 7 1 8 1 7 7 7 f
+    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
+    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
+    f f 7 7 7 7 7 3 3 7 7 7 7 7 f f
+    f f 7 7 7 f f 3 3 f f 7 7 7 f f
+    f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
+    f f 7 f 7 f f f f f f 7 f 7 f f
+`, SpriteKind.Player)
+mySprite.setStayInScreen(true)
+scene.setBackgroundColor(13)
+tiles.setCurrentTilemap(tilemap`Frogger_Lake1`)
 ```
 
 ## Step 4
@@ -134,57 +167,6 @@ Let's simulate again and see if anything is missing...
 Currently if our player comes into contact with the enemy sprite, nothing happens. 
 Let's fix that!
 
-## Step 5
-
-Grab an ``||sprites:onOverlap||`` block and change the second dropdown to ``||sprites:Projectile||``.
-
-Then place a ``||game:gameOver||`` within and set it to **LOSE**.
-
-Simulate and see what happens!
-
-```blocks
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.gameOver(false)
-})
-```
-
-## Step 6
-
-Notice, now when the player comes into contact with the enemy we get a **Game Over**.
-
-But right now our player can't get through the line of enemies, so we're going to change that.
-
-## Step 7
-
-To space out our enemies we will use an ``||logic:if "___"||`` with a ``||Math:percentChance||``.
-
-By dragging the ``||math:percentChance||`` into the ``||logic:if "___"||`` we can set a chance of an enemy appearing
-everytime our ``||game:onUpdateInterval "___"||`` runs.
-
-```blocks
-if (Math.percentChance()) {}
-```
-
-## Step 8
-
-Place the ``||logic:if "___||`` in ``||game:onUpdateInterval "___"||`` to have it encompass everything within.
-
-Set the ``|math:percentChance|`` to **50%**, and let's see the result!
-
-```blocks
-game.onUpdateInterval(500, function () {
-    if (Math.percentChance(50)) {
-        let projectile = sprites.createProjectileFromSide(assets.image`Spider_Down`, 50, 0)
-        projectile.setPosition(0, 40)
-    }
-})
-
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
-    game.gameOver(false)
-})
-```
-
 ## Complete
 
-Now our enemies work as intended and the player can get past. Fantastic work!
-
+Congratulations text.
