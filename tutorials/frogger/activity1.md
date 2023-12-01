@@ -39,7 +39,7 @@ Let's hit the ground running and add our splash screen.
 Grab a ``||game:splash "___"||`` block and add some text to welcome your players.
 
 ```blocks
-game.splash("Welcome to Frogger")
+game.splash("Welcome to A Frogger Clone")
 ```
 
 ## Step 2
@@ -54,7 +54,7 @@ Now that we have a splash screen to greet players, let's add our Frogger!
  You can also use one of the provided frog sprites in **My Assets**.
 
  ```blocks
-game.splash("Welcome to Frogger")
+game.splash("Welcome to A Frogger Clone")
  let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
  ```
 
@@ -64,7 +64,7 @@ Pull out a ``||sprites:set mySprite stay in screen||`` block and add it to the b
 Click the slider button to make it say **ON**.
 
 ```blocks
-game.splash("Welcome to Frogger")
+game.splash("Welcome to A Frogger Clone")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 ```
@@ -78,7 +78,7 @@ In **MakeCode** sprites are 16x16 pixels, so we need to add
 or subract 16 pixels for each button pressed for our movement.
 
 ```blocks
-game.splash("Welcome to Frogger")
+game.splash("Welcome to A Frogger Clone")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 
