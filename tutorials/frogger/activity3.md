@@ -67,7 +67,7 @@ Get a ``||scene:setBackgroundColor "___"||`` block and place it within **on star
 Set your prefered background color and test it to ensure you have your desired contrast.
 
 ```blocks
-game.splash("Welcome to Frogger")
+game.splash("Welcome to A Frogger Clone")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 scene.setBackgroundColor(13)
@@ -84,12 +84,12 @@ To add a tilemap go into ``||scene:Scene||`` and grab ``||scene:setCurrentTilema
 to place below our ``||scene:setBackgroundColor "___"||`` block.
 
 Click the blank box to begin drawing your tilemap. In the **bottom left** I recommend setting 
-the dimensions to **14** by **32**, but as long as it's longer than it is wide that's okay.
+the dimensions to **14** by **24**, but as long as it's longer than it is wide that's okay.
 
 Have fun with this and be sure to use at least **three** different tiles to construct your map. This will be important later.
 
 ```blocks
-game.splash("Welcome to Frogger")
+game.splash("Welcome to A Frogger Clone")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 scene.setBackgroundColor(13)
