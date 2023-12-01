@@ -2,24 +2,7 @@
 
 ```template
 game.splash("Welcome to A Frogger Clone")
-let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . f f f f f . . . . f f f f f .
-    f f 7 f 7 f . . . . f 7 f 7 f f
-    f 7 7 7 7 f f f f f f 7 7 7 7 f
-    f f f 7 7 7 7 7 7 7 7 7 7 f f f
-    . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
-    f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 1 8 1 7 7 1 8 1 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f f 7 7 7 7 7 3 3 7 7 7 7 7 f f
-    f f 7 7 7 f f 3 3 f f 7 7 7 f f
-    f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
-    f f 7 f 7 f f f f f f 7 f 7 f f
-`, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -75,31 +58,13 @@ Next go into ``||sprites:Sprites||`` and get a ``||variables(sprites):createProj
 to place in the ``||game:onUpdateInterval "___"||`` block,
 and draw an enemy for your character to avoid. 
 
-If you don't want to draw it yourself, you can select a premade asset. 
-An enemy sprite will also be provided in the next skillmap step.
+If you don't want to draw it yourself, you can select a MakeCode asset or the spider in **My Assets**. 
 
 Once finished, set **vy** to **0**. Othwerise, the sprite will be moving diagonally. 
 
 ```blocks
 game.onUpdateInterval(500, function () {
-let projectile = sprites.createProjectileFromSide(img`
-    . . . . . . f . . . f . . . . .
-    . . . . f f 4 f f f 4 f . f . .
-    . . f f 2 4 c f 2 4 2 f f 4 f .
-    . f 4 2 f f f f 4 f f 4 2 2 f .
-    . . f 4 2 e e e e 4 f 2 f f . .
-    . . . f e c c c c c e e f . . .
-    . . f e c 4 4 e c e b 2 e f . .
-    . . f e 4 d d 4 e e 4 4 4 f . .
-    . . f e 4 d d 4 e e 4 4 4 f . .
-    . . f e c 4 4 e c e b 2 e f . .
-    . . . f e c c c c c e e f . . .
-    . . f 4 2 e e e e 4 f 2 f f . .
-    . f 4 2 f f f f 4 f f 4 2 2 f .
-    . . f f 2 4 c f 2 4 2 f f 4 f .
-    . . . . f f 4 f f f 4 f . f . .
-    . . . . . . f . . . f . . . . .
-`, 50, 0)
+let projectile = sprites.createProjectileFromSide(assets.image`Spider_Right`, 50, 0)
 })
 ```
 
@@ -114,24 +79,7 @@ Now our enemy sprite should be right above where the player starts.
 
 ```blocks
 game.onUpdateInterval(500, function () {
-let projectile = sprites.createProjectileFromSide(img`
-    . . . . . . f . . . f . . . . .
-    . . . . f f 4 f f f 4 f . f . .
-    . . f f 2 4 c f 2 4 2 f f 4 f .
-    . f 4 2 f f f f 4 f f 4 2 2 f .
-    . . f 4 2 e e e e 4 f 2 f f . .
-    . . . f e c c c c c e e f . . .
-    . . f e c 4 4 e c e b 2 e f . .
-    . . f e 4 d d 4 e e 4 4 4 f . .
-    . . f e 4 d d 4 e e 4 4 4 f . .
-    . . f e c 4 4 e c e b 2 e f . .
-    . . . f e c c c c c e e f . . .
-    . . f 4 2 e e e e 4 f 2 f f . .
-    . f 4 2 f f f f 4 f f 4 2 2 f .
-    . . f f 2 4 c f 2 4 2 f f 4 f .
-    . . . . f f 4 f f f 4 f . f . .
-    . . . . . . f . . . f . . . . .
-`, 50, 0)
+let projectile = sprites.createProjectileFromSide(assets.image`Spider_Right`, 50, 0)
 projectile.setPosition(0, 40)
 })
 ```
@@ -183,24 +131,7 @@ Set the ``|math:percentChance|`` to **50%**, and let's see the result!
 ```blocks
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
-        let projectile = sprites.createProjectileFromSide(img`
-    . . . . . . f . . . f . . . . .
-    . . . . f f 4 f f f 4 f . f . .
-    . . f f 2 4 c f 2 4 2 f f 4 f .
-    . f 4 2 f f f f 4 f f 4 2 2 f .
-    . . f 4 2 e e e e 4 f 2 f f . .
-    . . . f e c c c c c e e f . . .
-    . . f e c 4 4 e c e b 2 e f . .
-    . . f e 4 d d 4 e e 4 4 4 f . .
-    . . f e 4 d d 4 e e 4 4 4 f . .
-    . . f e c 4 4 e c e b 2 e f . .
-    . . . f e c c c c c e e f . . .
-    . . f 4 2 e e e e 4 f 2 f f . .
-    . f 4 2 f f f f 4 f f 4 2 2 f .
-    . . f f 2 4 c f 2 4 2 f f 4 f .
-    . . . . f f 4 f f f 4 f . f . .
-    . . . . . . f . . . f . . . . .
-`, 50, 0)
+        let projectile = sprites.createProjectileFromSide(assets.image`Spider_Right`, 50, 0)
         projectile.setPosition(0, 40)
     }
 })
