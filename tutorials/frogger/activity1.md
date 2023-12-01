@@ -50,28 +50,12 @@ Now that we have a splash screen to greet players, let's add our Frogger!
  Add this below the ``||game:splash "___"||`` block.
  
  Click on the grey image in the block to add the provided sprite 
- or to open the Image Editor, and draw an image for your sprite.
+ or to open the Image Editor, and draw an image for your sprite. 
+ You can also use one of the provided frog sprites in **My Assets**.
 
  ```blocks
 game.splash("Welcome to Frogger")
- let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . f f f f f . . . . f f f f f .
-    f f 7 f 7 f . . . . f 7 f 7 f f
-    f 7 7 7 7 f f f f f f 7 7 7 7 f
-    f f f 7 7 7 7 7 7 7 7 7 7 f f f
-    . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
-    f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 1 8 1 7 7 1 8 1 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f f 7 7 7 7 7 3 3 7 7 7 7 7 f f
-    f f 7 7 7 f f 3 3 f f 7 7 7 f f
-    f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
-    f f 7 f 7 f f f f f f 7 f 7 f f
-`, SpriteKind.Player)
+ let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
  ```
 
 ## Step 3
@@ -81,24 +65,7 @@ Click the slider button to make it say **ON**.
 
 ```blocks
 game.splash("Welcome to Frogger")
-let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . f f f f f . . . . f f f f f .
-    f f 7 f 7 f . . . . f 7 f 7 f f
-    f 7 7 7 7 f f f f f f 7 7 7 7 f
-    f f f 7 7 7 7 7 7 7 7 7 7 f f f
-    . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
-    f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 1 8 1 7 7 1 8 1 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f f 7 7 7 7 7 3 3 7 7 7 7 7 f f
-    f f 7 7 7 f f 3 3 f f 7 7 7 f f
-    f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
-    f f 7 f 7 f f f f f f 7 f 7 f f
-`, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 ```
 
@@ -112,24 +79,7 @@ or subract 16 pixels for each button pressed for our movement.
 
 ```blocks
 game.splash("Welcome to Frogger")
-let mySprite = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . f f f f f . . . . f f f f f .
-    f f 7 f 7 f . . . . f 7 f 7 f f
-    f 7 7 7 7 f f f f f f 7 7 7 7 f
-    f f f 7 7 7 7 7 7 7 7 7 7 f f f
-    . f 7 7 7 7 7 7 7 7 7 7 7 7 f .
-    f f 7 7 7 7 7 7 7 7 7 7 7 7 f f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 1 8 1 7 7 1 8 1 7 7 7 f
-    f 7 7 7 1 1 1 7 7 1 1 1 7 7 7 f
-    f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f
-    f f 7 7 7 7 7 3 3 7 7 7 7 7 f f
-    f f 7 7 7 f f 3 3 f f 7 7 7 f f
-    f 7 7 7 7 7 f 3 3 f 7 7 7 7 7 f
-    f f 7 f 7 f f f f f f 7 f 7 f f
-`, SpriteKind.Player)
+let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
