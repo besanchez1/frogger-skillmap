@@ -3,6 +3,7 @@
 ```template
 game.splash("Welcome to A Frogger Clone")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
+mySprite.setPosition(120, 328)
 mySprite.setStayInScreen(true)
 scene.setBackgroundColor(13)
 tiles.setCurrentTilemap(tilemap`Frogger_Strip`)
