@@ -37,7 +37,7 @@
 
 * url: https://github.com/besanchez1/frogger-skillmap/tutorials/frogger/activity3
 
-* ### frogger-activity4
+### frogger-activity4
 
 * name: Enemy Improvements
 * type: tutorial
@@ -46,8 +46,8 @@
 * next: frogger-activity5
 
 * url: https://github.com/besanchez1/frogger-skillmap/tutorials/frogger/activity4
-  
-* ### frogger-activity5
+
+### frogger-activity5
 
 * name: Winning!
 * type: tutorial
