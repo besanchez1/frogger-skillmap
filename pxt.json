@@ -11,7 +11,9 @@
         "_locales/fr/skillmap.md",
         "tutorials/frogger/activity1.md",
         "tutorials/frogger/activity2.md",
-        "tutorials/frogger/activity3.md"
+        "tutorials/frogger/activity3.md",
+        "tutorials/frogger/activity4.md",
+        "tutorials/frogger/activity5.md"
     ],
     "testFiles": [
     ],
