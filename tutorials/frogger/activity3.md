@@ -124,8 +124,8 @@ With one issue solved, let's fix our starting position.
 
 Each tile on a tilemap is **16x16** pixels and the origin **(0,0)** is located at the top left corner.
 
-If we want to set our sprite to start in the bottom middle of a **14** by **24** tilemap then 7 tiles right
-and 20 tiles down would be the pixel coordinates **(112,320)**.
+If we want to set our sprite to start in the bottom middle of a **14** by **24** tilemap then 7.5 tiles right
+and 20.5 tiles down would be the pixel coordinates **(120,328)**.
 
 The coordinates may differ depending on where the bottom middle is for the tilemap you made, but you can determine your 
 coordinates by multiplying the desired tile **x** and **y** by **16**.
@@ -136,7 +136,7 @@ Now that we know where we want our player to start, grab a ``||sprite:setPositio
 ```blocks
 game.splash("Welcome to Frogger")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
-mySprite.setPosition(112, 320)
+mySprite.setPosition(120, 328)
 mySprite.setStayInScreen(true)
 scene.setBackgroundColor(13)
 tiles.setCurrentTilemap(tilemap`Frogger_Strip`)
