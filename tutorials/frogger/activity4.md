@@ -1,3 +1,40 @@
+# Frogger Enemy Improvements
+
+```template
+game.splash("Welcome to A Frogger Clone")
+let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
+mySprite.setStayInScreen(true)
+scene.setBackgroundColor(13)
+tiles.setCurrentTilemap(tilemap`Frogger_Strip`)
+scene.cameraFollowSprite(mySprite)
+
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.y += -16
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.x += -16
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.x += 16
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.y += 16
+})
+
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(50)) {
+        let projectile = sprites.createProjectileFromSide(assets.image`Spider_Right`, 50, 0)
+        projectile.setPosition(0, 40)
+    }
+})
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.gameOver(false)
+})
+
+```
+
+
 ```assetjson
 {
   "README.md": " ",
