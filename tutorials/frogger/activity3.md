@@ -61,7 +61,6 @@ First, we'll add a simple background to add contrast for our player and enemy sp
 
 ## Step 2
 
-
 Get a ``||scene:setBackgroundColor "___"||`` block and place it within **on start** block.
 
 Set your prefered background color and test it to ensure you have your desired contrast.
@@ -86,6 +85,8 @@ to place below our ``||scene:setBackgroundColor "___"||`` block.
 Click the blank box to begin drawing your tilemap. In the **bottom left** I recommend setting 
 the dimensions to **14** by **24**, but as long as it's longer than it is wide that's okay.
 
+There is also a provided tilemap that you can be used in **My Assets**.
+
 Have fun with this and be sure to use at least **three** different tiles to construct your map. This will be important later.
 
 ```blocks
@@ -93,16 +94,61 @@ game.splash("Welcome to A Frogger Clone")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 scene.setBackgroundColor(13)
-tiles.setCurrentTilemap(tilemap`Frogger_Lake1`)
+tiles.setCurrentTilemap(tilemap`Frogger_Strip`)
 ```
 
-## Step 4
+## Step 5
 
-Let's simulate again and see if anything is missing...
+Let's simulate and see how things look.
 
-Currently if our player comes into contact with the enemy sprite, nothing happens. 
-Let's fix that!
+Currently there are a couple issues. Our player starts at the top half of the tilemap and is limited to that space. 
+Ideally, in this game, we want to start towards the bottom and game screen should pan with the player as the progress upward. 
+
+## Step 6
+Fist, we'll have the camera follow the player. Grab a ``||sprite:cameraFollowSprite "__"||`` and place it below our **sprite** block.
+
+Set it to follow **mySprite** and you should be able to move around the entire tilemap!
+
+```blocks
+game.splash("Welcome to Frogger")
+let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
+mySprite.setStayInScreen(true)
+scene.setBackgroundColor(13)
+tiles.setCurrentTilemap(tilemap`Frogger_Strip`)
+scene.cameraFollowSprite(mySprite)
+})
+```
+
+## Step 7 
+With one issue solved, let's fix our starting position. 
+
+Each tile on a tilemap is **16x16** pixels and the origin **(0,0)** is located at the top left corner.
+
+If we want to set our sprite to start in the bottom middle of a **14** by **24** tilemap then 7 tiles right
+and 20 tiles down would be the pixel coordinates **(112,320)**.
+
+The coordinates may differ depending on where the bottom middle is for the tilemap you made, but you can determine your 
+coordinates by multiplying the desired tile **x** and **y** by **16**.
+
+## Step 8
+Now that we know where we want our player to start, grab a ``||sprite:setPosition to "___"||`` and input your coordinates.
+
+```blocks
+game.splash("Welcome to Frogger")
+let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
+mySprite.setPosition(112, 320)
+mySprite.setStayInScreen(true)
+scene.setBackgroundColor(13)
+tiles.setCurrentTilemap(tilemap`Frogger_Strip`)
+scene.cameraFollowSprite(mySprite)
+})
+```
+
+## Step 9
+Our game is really starting to take shape, but some may have noticed the enemy functionality has changed.
+
+In the next section we will look into and improve how our enemy works.
 
 ## Complete
 
-Congratulations text.
+Great job following along, we're nearly there!
