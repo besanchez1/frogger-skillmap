@@ -1,3 +1,56 @@
+# Frogger Winning!
+
+```template
+game.splash("Welcome to A Frogger Clone")
+let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
+mySprite.setPosition(120, 328)
+mySprite.setStayInScreen(true)
+scene.setBackgroundColor(13)
+tiles.setCurrentTilemap(tilemap`Frogger_Strip`)
+scene.cameraFollowSprite(mySprite)
+
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.y += -16
+})
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.x += -16
+})
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.x += 16
+})
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    mySprite.y += 16
+})
+
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(50)) {
+        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        spider.setVelocity(50, 0)
+        tiles.placeOnRandomTile(spider, sprites.dungeon.hazardWater)
+        spider.x = 0
+        spider.setFlag(SpriteFlag.DestroyOnWall, true)
+    }
+})
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(100)) {
+        car = sprites.create(assets.image`Car`, SpriteKind.Enemy)
+        car.setVelocity(-50, 0)
+        tiles.placeOnRandomTile(car, sprites.vehicle.roadHorizontal)
+        car.x = 224
+        car.setFlag(SpriteFlag.DestroyOnWall, true)
+    }
+})
+
+
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
+    game.gameOver(false)
+})
+
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.darkGroundCenter, function (sprite, location) {
+    game.gameOver(true)
+})
+```
+
 ```assetjson
 {
   "README.md": " ",
