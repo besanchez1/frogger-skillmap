@@ -33,5 +33,25 @@
 * type: tutorial
 * description: Now add a background to set the game scene!
 * tags: easy
+* next: frogger-activity4
 
 * url: https://github.com/besanchez1/frogger-skillmap/tutorials/frogger/activity3
+
+* ### frogger-activity4
+
+* name: Enemy Improvements
+* type: tutorial
+* description: Let's make our enemies more dynamic and add more into the level.
+* tags: easy
+* next: frogger-activity5
+
+* url: https://github.com/besanchez1/frogger-skillmap/tutorials/frogger/activity4
+
+* ### frogger-activity5
+
+* name: Winning!
+* type: tutorial
+* description: Everything's set, the player just needs to win!
+* tags: easy
+
+* url: https://github.com/besanchez1/frogger-skillmap/tutorials/frogger/activity5
