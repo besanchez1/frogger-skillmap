@@ -24,7 +24,7 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
 
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
-        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        let spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
         spider.setVelocity(50, 0)
         tiles.placeOnRandomTile(spider, sprites.dungeon.hazardWater)
         spider.x = 0
@@ -33,7 +33,7 @@ game.onUpdateInterval(500, function () {
 })
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(100)) {
-        car = sprites.create(assets.image`Car`, SpriteKind.Enemy)
+        let car = sprites.create(assets.image`Car`, SpriteKind.Enemy)
         car.setVelocity(-50, 0)
         tiles.placeOnRandomTile(car, sprites.vehicle.roadHorizontal)
         car.x = 224
@@ -44,10 +44,6 @@ game.onUpdateInterval(500, function () {
 
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     game.gameOver(false)
-})
-
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.darkGroundCenter, function (sprite, location) {
-    game.gameOver(true)
 })
 ```
 
