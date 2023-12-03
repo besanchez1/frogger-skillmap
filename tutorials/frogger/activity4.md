@@ -71,7 +71,7 @@ Set the **sprite** to whatever you used prior, then set the second dropdown to k
 ```blocks
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
-        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        let spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
         projectile.setVelocity(50, 0)
     }
 })
@@ -86,7 +86,7 @@ Now our enemy should be appearing and making it to the edge of the tilemap even 
 ```blocks
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
-        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        let spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
         spider.setVelocity(50, 0)
     }
 })
@@ -102,7 +102,7 @@ and then select the tile type you would like to place it on.
 ```blocks
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
-        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        let spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
         spider.setVelocity(50, 0)
         tiles.placeOnRandomTile(spider, sprites.dungeon.hazardWater)
     }
@@ -120,7 +120,7 @@ in line with a tile of the type you chose.
 ```blocks
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
-        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        let spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
         spider.setVelocity(50, 0)
         tiles.placeOnRandomTile(spider, sprites.dungeon.hazardWater)
         spider.x = 0
@@ -141,7 +141,7 @@ To do so, grab a ``||sprite:setFlag "___"||``, change the dropdown to **destroy 
 ```blocks
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(50)) {
-        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        let spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
         spider.setVelocity(50, 0)
         tiles.placeOnRandomTile(spider, sprites.dungeon.hazardWater)
         spider.x = 0
@@ -176,7 +176,7 @@ Example of a car:
 ```blocks
 game.onUpdateInterval(500, function () {
     if (Math.percentChance(100)) {
-        car = sprites.create(assets.image`Car`, SpriteKind.Enemy)
+        let car = sprites.create(assets.image`Car`, SpriteKind.Enemy)
         car.setVelocity(-50, 0)
         tiles.placeOnRandomTile(car, sprites.vehicle.roadHorizontal)
         car.x = 224
