@@ -64,3 +64,32 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.darkGroundCenter, functio
 "pxt.json": "{\n    \"name\": \"Frogger Clone 12-1-2023\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\",\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"images.g.jres\",\n        \"images.g.ts\",\n        \"tilemap.g.jres\",\n        \"tilemap.g.ts\"\n    ],\n    \"targetVersions\": {\n        \"target\": \"1.12.41\",\n        \"targetId\": \"arcade\"\n    },\n    \"supportedTargets\": [\n        \"arcade\"\n    ],\n    \"preferredEditor\": \"blocksprj\"\n}\n"
 }
 ```
+
+### @explicitHints true
+
+## Introduction @unplugged
+
+Everything seems to be going well, but enemies as **projectiles** may not be ideal.
+
+If you playtested you may have noticed that enemies only appear if their starting position is in the screen. 
+Let's change them so that they always appear.
+
+## Step 1
+
+**Projectiles** only function in the screen, so we need to change our enemy sprite to be something else.
+
+Start by replacing the ``||variables(sprites):createPojectileFromSide||`` with a ``||sprites:create "___"||`` block. 
+In this block, in the first dropdown, **set** your enemy to a **new variable**. 
+It's named **spider** in this example to match the provided sprite, but feel free to write something else.
+
+Set the **sprite** to whatever you used prior, then set the second dropdown to kind of **enemy**.
+
+```blocks
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(50)) {
+        let spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        projectile.setVelocity(50, 0)
+    }
+})
+```
+## Complete
