@@ -49,3 +49,142 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 "pxt.json": "{\n    \"name\": \"Frogger Clone 12-1-2023\",\n    \"description\": \"\",\n    \"dependencies\": {\n        \"device\": \"*\",\n    },\n    \"files\": [\n        \"main.blocks\",\n        \"main.ts\",\n        \"README.md\",\n        \"assets.json\",\n        \"images.g.jres\",\n        \"images.g.ts\",\n        \"tilemap.g.jres\",\n        \"tilemap.g.ts\"\n    ],\n    \"targetVersions\": {\n        \"target\": \"1.12.41\",\n        \"targetId\": \"arcade\"\n    },\n    \"supportedTargets\": [\n        \"arcade\"\n    ],\n    \"preferredEditor\": \"blocksprj\"\n}\n"
 }
 ```
+### @explicitHints true
+
+## Introduction @unplugged
+
+Everything seems to be going well, but enemies as **projectiles** may not be ideal.
+
+If you playtested you may have noticed that enemies only appear if their starting position is in the screen. 
+Let's change them so that they always appear.
+
+## Step 1
+
+**Projectiles** only function in the screen, so we need to change our enemy sprite to be something else.
+
+Start by replacing the ``||variables(sprites):createPojectileFromSide||`` with a ``||sprites:create "___"||`` block. 
+In this block, in the first dropdown, **set** your enemy to a **new variable**. 
+It's named **spider** in this example to match the provided sprite, but feel free to write something else.
+
+Set the **sprite** to whatever you used prior, then set the second dropdown to kind of **enemy**.
+
+```blocks
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(50)) {
+        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        projectile.setVelocity(50, 0)
+    }
+})
+```
+
+## Step 2
+
+Next, change the dropdown option in ``||sprites:setPosition to "___"||`` from **Projectile** to whatever you named your enemy variable.
+
+Now our enemy should be appearing and making it to the edge of the tilemap even if they go offscreen.
+
+```blocks
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(50)) {
+        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        spider.setVelocity(50, 0)
+    }
+})
+```
+## Step 3
+
+It was mentioned earlier to use serveral different tiles if you didn't use the premade tilemap. 
+We'll be using a distinct tile reference to have our enemy start in specific locations without the need to specify coordinates.
+
+For this we'll use a ``||scene:placeOnRandomTile "___"||`` block. Set the dropdown to your enemy variable name 
+and then select the tile type you would like to place it on. 
+
+```blocks
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(50)) {
+        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        spider.setVelocity(50, 0)
+        tiles.placeOnRandomTile(spider, sprites.dungeon.hazardWater)
+    }
+})
+```
+
+## Step 4
+
+If you test the game the enemy will be randomly spawning on the specified tile type. However, we want the enemy to be coming
+from the edge of the tilemap.
+
+To fix this insert a ``||sprite:Set "___"||`` and set **x** to **0**. Now this enemy correctly comes from the left edge 
+in line with a tile of the type you chose.
+
+```blocks
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(50)) {
+        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        spider.setVelocity(50, 0)
+        tiles.placeOnRandomTile(spider, sprites.dungeon.hazardWater)
+        spider.x = 0
+    }
+})
+```
+
+## Step 5
+
+It's encouraged to play around with the tilemap and where you want your enemy to appear. Really make this your own!
+
+## Step 6
+
+Last thing to do with this enemy is to have it destroy when it reaches the end of the tilemap rather than sitting there.
+
+To do so, grab a ``||sprite:setFlag "___"||``, change the dropdown to **destroy on wall** and turn it **ON**.
+
+```blocks
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(50)) {
+        spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
+        spider.setVelocity(50, 0)
+        tiles.placeOnRandomTile(spider, sprites.dungeon.hazardWater)
+        spider.x = 0
+        spider.setFlag(SpriteFlag.DestroyOnWall, true)
+    }
+})
+```
+
+## Step 7 
+
+The enemy should be good to go at this point, we just need to fix what happens when it overlaps the player.
+
+Since the enemy is of type **Enemy** and not **Projectile** change the ``||sprites:onOverlap||`` dropdown option to **Enemy**.
+
+```blocks
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    game.gameOver(false)
+})
+```
+
+## Step 8
+
+The enemy you have is now much improved and versatile! Go ahead and add something else to test yourself. 
+
+A good way to start making your own enemy would be to **right-click** and **duplicate** the blocks we just made. 
+The next step will provide an example for a car enemy, but try making something yourself first.
+
+## Step 9
+
+Example of a car:
+
+```blocks
+game.onUpdateInterval(500, function () {
+    if (Math.percentChance(100)) {
+        car = sprites.create(assets.image`Car`, SpriteKind.Enemy)
+        car.setVelocity(-50, 0)
+        tiles.placeOnRandomTile(car, sprites.vehicle.roadHorizontal)
+        car.x = 224
+        car.setFlag(SpriteFlag.DestroyOnWall, true)
+    }
+})
+```
+
+## Complete
+
+Fantastic job following along so far. There's only one last thing to do and that is to win!
