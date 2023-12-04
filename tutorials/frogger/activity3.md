@@ -105,7 +105,7 @@ Currently there are a couple issues. Our player starts at the top half of the ti
 Ideally, in this game, we want to start towards the bottom and game screen should pan with the player as the progress upward. 
 
 ## Step 6
-Fist, we'll have the camera follow the player. Grab a ``||sprite:cameraFollowSprite "__"||`` and place it below our **sprite** block.
+Fist, we'll have the camera follow the player. Grab a ``||sprite:cameraFollowSprite mySprite||`` and place it below our **sprite** block.
 
 Set it to follow **mySprite** and you should be able to move around the entire tilemap!
 
@@ -131,7 +131,7 @@ The coordinates may differ depending on where the bottom middle is for the tilem
 coordinates by multiplying the desired tile **x** and **y** by **16**.
 
 ## Step 8
-Now that we know where we want our player to start, grab a ``||sprite:setPosition to "___"||`` and input your coordinates.
+Now that we know where we want our player to start, grab a ``||sprites:setPosition to "___"||`` and input your coordinates.
 
 ```blocks
 game.splash("Welcome to Frogger")
