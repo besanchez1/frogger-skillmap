@@ -1,7 +1,7 @@
 # Frogger Background and Tile Map
 
 ```template
-game.splash("Welcome to A Frogger Clone")
+game.splash("Welcome to A Road Crossing Game")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 
@@ -66,7 +66,7 @@ Get a ``||scene:setBackgroundColor "___"||`` block and place it within **on star
 Set your prefered background color and test it to ensure you have your desired contrast.
 
 ```blocks
-game.splash("Welcome to A Frogger Clone")
+game.splash("Welcome to A Road Crossing Game")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 scene.setBackgroundColor(13)
@@ -90,7 +90,7 @@ There is also a provided tilemap that you can be used in **My Assets**.
 Have fun with this and be sure to use at least **three** different tiles to construct your map. This will be important later.
 
 ```blocks
-game.splash("Welcome to A Frogger Clone")
+game.splash("Welcome to A Road Crossing Game")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 scene.setBackgroundColor(13)
@@ -110,7 +110,7 @@ Fist, we'll have the camera follow the player. Grab a ``||scene:cameraFollowSpri
 Set it to follow **mySprite** and you should be able to move around the entire tilemap!
 
 ```blocks
-game.splash("Welcome to Frogger")
+game.splash("Welcome to A Road Crossing Game")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setStayInScreen(true)
 scene.setBackgroundColor(13)
@@ -134,7 +134,7 @@ coordinates by multiplying the desired tile **x** and **y** by **16**.
 Now that we know where we want our player to start, grab a ``||sprites:setPosition to "___"||`` and input your coordinates.
 
 ```blocks
-game.splash("Welcome to Frogger")
+game.splash("Welcome to A Road Crossing Game")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setPosition(120, 328)
 mySprite.setStayInScreen(true)
