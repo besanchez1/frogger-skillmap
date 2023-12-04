@@ -62,7 +62,7 @@ Let's change them so that they always appear.
 
 **Projectiles** only function in the screen, so we need to change our enemy sprite to be something else.
 
-Start by replacing the ``||variables(sprites):createPojectileFromSide||`` with a ``||variables(sprites):create mySprite||`` block. 
+Start by replacing the ``||variables(sprites):createPojectileFromSide||`` with a ``||sprites(variables):create mySprite||`` block. 
 In this block, in the first dropdown, **set** your enemy to a **new variable**. 
 It's named **spider** in this example to match the provided sprite, but feel free to write something else.
 
