@@ -1,8 +1,16 @@
-# MakeCode Skillmap Sample
+# Important Information
 
-Test this by going to https://arcade.makecode.com/skillmap#github:https://github.com/besanchez1/frogger-skillmap/blob/main/skillmap.md
+This Frogger skillmap can be accessed by going to https://arcade.makecode.com/skillmap#github:https://github.com/besanchez1/frogger-skillmap/blob/main/skillmap.md
 
+Below is the original Microsoft documentation relating to skillmaps and how to make them. Please reference the pxt-skillmap-sample for greater detail.
 
+## MakeCode Skill Map Sample
+
+This is an example skill map that contains three separate learning paths.You can view the content here: https://arcade.makecode.com/skillmap#github:microsoft/pxt-skillmap-sample/skillmap.md
+
+Github-hosted skill maps are loaded in the same manner as tutorials, with a URL fragment formatted as follows:
+
+#github:[organization name]/[repository name]/[markdown file name]
 ## Forking
 
 If you fork this repo, be sure to change all URL references to https://github.com/microsoft/pxt-skillmap-sample to your forked repo's URL. Otherwise you won't see your changes.
