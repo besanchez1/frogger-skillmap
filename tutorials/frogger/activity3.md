@@ -105,7 +105,7 @@ Currently there are a couple issues. Our player starts at the top half of the ti
 Ideally, in this game, we want to start towards the bottom and game screen should pan with the player as the progress upward. 
 
 ## Step 6
-Fist, we'll have the camera follow the player. Grab a ``||sprite:cameraFollowSprite mySprite||`` and place it below our **sprite** block.
+Fist, we'll have the camera follow the player. Grab a ``||scene:cameraFollowSprite||`` and place it below our **sprite** block.
 
 Set it to follow **mySprite** and you should be able to move around the entire tilemap!
 
