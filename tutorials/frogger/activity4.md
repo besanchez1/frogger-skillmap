@@ -1,7 +1,7 @@
 # Frogger Enemy Improvements
 
 ```template
-game.splash("Welcome to A Frogger Clone")
+game.splash("Welcome to A Road Crossing Game")
 let mySprite = sprites.create(assets.image`Frogger_Idle_Down`, SpriteKind.Player)
 mySprite.setPosition(120, 328)
 mySprite.setStayInScreen(true)
