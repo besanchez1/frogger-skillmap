@@ -76,7 +76,7 @@ overlapping tiles designated at the top should prompt a **Win**.
 
 ## Step 2
 
-Get a ``||scene.onOverlapTile "___"||`` block. If you don't already have tiles to serve as a goal, 
+Get a ``||scene:onOverlapTile "___"||`` block. If you don't already have tiles to serve as a goal, 
 edit your tilemap and change the top row to something unique.
 
 Set the overlap to kind **Player** and change the tile to match the tile you set for your goal.
@@ -88,7 +88,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.darkGroundCenter, functio
 
 ## Step 3
 
-Next, grab a ``||game:gameOver||`` block and place it within the ``||scene.onOverlapTile "___"||``.
+Next, grab a ``||game:gameOver||`` block and place it within the ``||scene:onOverlapTile "___"||``.
 
 Set it to **On** and test it out!
 
