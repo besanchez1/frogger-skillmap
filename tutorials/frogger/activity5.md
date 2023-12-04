@@ -65,27 +65,41 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, ot
 
 ## Introduction @unplugged
 
-Everything seems to be going well, but enemies as **projectiles** may not be ideal.
-
-If you playtested you may have noticed that enemies only appear if their starting position is in the screen. 
-Let's change them so that they always appear.
+With most things wrapped up we just need to win! Set up a win condition and our simple Frogger game is good to go!
 
 ## Step 1
 
-**Projectiles** only function in the screen, so we need to change our enemy sprite to be something else.
+Starting at the bottom, the player's goal is to reach the top while avoiding enemy obstactles. 
 
-Start by replacing the ``||variables(sprites):createPojectileFromSide||`` with a ``||sprites:create "___"||`` block. 
-In this block, in the first dropdown, **set** your enemy to a **new variable**. 
-It's named **spider** in this example to match the provided sprite, but feel free to write something else.
+Once the player reaches the top they should win. Similar to how enemies overlap the player and cause a **Game Over**,
+overlapping tiles designated at the top should prompt a **Win**.
 
-Set the **sprite** to whatever you used prior, then set the second dropdown to kind of **enemy**.
+## Step 2
+
+Get a ``||scene.onOverlapTile "___"||`` block. If you don't already have tiles to serve as a goal, 
+edit your tilemap and change the top row to something unique.
+
+Set the overlap to kind **Player** and change the tile to match the tile you set for your goal.
 
 ```blocks
-game.onUpdateInterval(500, function () {
-    if (Math.percentChance(50)) {
-        let spider = sprites.create(assets.image`Spider_Right`, SpriteKind.Enemy)
-        projectile.setVelocity(50, 0)
-    }
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.darkGroundCenter, function (sprite, location) {
 })
 ```
+
+## Step 3
+
+Next, grab a ``||game:gameOver||`` block and place it within the ``||scene.onOverlapTile "___"||``.
+
+Set it to **On** and test it out!
+
+```blocks
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.darkGroundCenter, function (sprite, location) {
+    game.gameOver(true)
+})
+```
+
 ## Complete
+
+You've done it! You've got the core components for a Frogger road crossing style of game. 
+
+Remix the project all you want and see what unique twists you can create. Congratulations!
