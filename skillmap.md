@@ -1,17 +1,17 @@
 # frogger
-* name: Frogger Game Maker Guide
+* name: Road Crossing Game Maker Guide
 * description: Level up your game making skills by completing the tutorials in this guide.
 
 
 ## frogger
 * name: frogger
-* description: Let's recreate the classic game Frogger and see what we can learn!
+* description: Let's create a Frogger-style game and see what we can learn!
 
 ### frogger-activity1
 
-* name: Splash Screen and Frogger Sprite
+* name: Splash Screen and Player Sprite
 * type: tutorial
-* description: Make a splash screen and a Frogger sprite with movement!
+* description: Make a splash screen and a Player sprite with movement!
 * tags: easy
 * next: frogger-activity2
 
@@ -19,9 +19,9 @@
 
 ### frogger-activity2
 
-* name: Enemies
+* name: Enemy
 * type: tutorial
-* description: Let's add some projectile enemies to shake things up!
+* description: Let's add a projectile enemy to shake things up!
 * tags: easy
 * next: frogger-activity3
 
@@ -41,7 +41,7 @@
 
 * name: Enemy Improvements
 * type: tutorial
-* description: Let's make our enemies more dynamic and add more into the level.
+* description: Let's make our enemy more dynamic and add another into the level.
 * tags: easy
 * next: frogger-activity5
 
