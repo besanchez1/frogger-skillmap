@@ -62,7 +62,7 @@ Let's change them so that they always appear.
 
 **Projectiles** only function in the screen, so we need to change our enemy sprite to be something else.
 
-Start by replacing the ``||variables(sprites):createPojectileFromSide||`` with a ``||sprites:create mySprite||`` block. 
+Start by replacing the ``||variables(sprites):createPojectileFromSide||`` with a ``||sprites(variable):create mySprite||`` block. 
 In this block, in the first dropdown, **set** your enemy to a **new variable**. 
 It's named **spider** in this example to match the provided sprite, but feel free to write something else.
 
@@ -114,7 +114,7 @@ game.onUpdateInterval(500, function () {
 If you test the game the enemy will be randomly spawning on the specified tile type. However, we want the enemy to be coming
 from the edge of the tilemap.
 
-To fix this insert a ``||sprite:Set mySprite||`` and set **x** to **0**. Now this enemy correctly comes from the left edge 
+To fix this insert a ``||sprites:Set "___"||`` and set **x** to **0**. Now this enemy correctly comes from the left edge 
 in line with a tile of the type you chose.
 
 ```blocks
